@@ -19,4 +19,15 @@ typedef NS_ENUM(NSInteger, AMWebViewButton) {
 
 + (instancetype)amWebView;
 
+@property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (weak, nonatomic) IBOutlet UITextField *addressTextField;
+@property (weak, nonatomic) IBOutlet UIButton *menuButton;
+@property (weak, nonatomic) IBOutlet UIButton *reloadButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityLoading;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+
+@property (copy, nonatomic) void(^eventHandler)(id sender);
+
 @end

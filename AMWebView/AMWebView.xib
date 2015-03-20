@@ -127,6 +127,7 @@
                 <outlet property="menuButton" destination="Rbt-0X-9zA" id="TIt-Vt-Xko"/>
                 <outlet property="nextButton" destination="aaX-mr-Hgb" id="8lS-G7-n3g"/>
                 <outlet property="reloadButton" destination="KOM-FN-riC" id="Ywu-km-RAb"/>
+                <outlet property="topConstraint" destination="CTb-h9-2n7" id="YZI-sZ-RSR"/>
                 <outlet property="webView" destination="YB3-sa-Lqe" id="hhk-Df-Rw3"/>
             </connections>
             <point key="canvasLocation" x="613" y="400"/>

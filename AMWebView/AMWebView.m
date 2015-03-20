@@ -8,17 +8,9 @@
 
 #import "AMWebView.h"
 
-@interface AMWebView()<UITextFieldDelegate, UIWebViewDelegate>
+@interface AMWebView()<UITextFieldDelegate, UIWebViewDelegate, UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *headerView;
-@property (weak, nonatomic) IBOutlet UIButton *backButton;
-@property (weak, nonatomic) IBOutlet UIButton *nextButton;
-@property (weak, nonatomic) IBOutlet UITextField *addressTextField;
-@property (weak, nonatomic) IBOutlet UIButton *menuButton;
-@property (weak, nonatomic) IBOutlet UIButton *reloadButton;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityLoading;
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
 
 @end
 
@@ -40,13 +32,17 @@
 
 #pragma mark - Setup 
 - (void)prepareLayout{
-    self.activityLoading.layer.borderWidth = 1;
+    
 }
 
 #pragma mark - Button Event
 - (IBAction)tapOnButton:(UIButton*)sender{
     
     AMWebViewButton tag = sender.tag;
+    
+    if (self.eventHandler) {
+        self.eventHandler(sender);
+    }
     
     switch (tag) {
         case AMWebViewBack:
@@ -124,11 +120,31 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
+    self.webView.scrollView.delegate = self;
     [self.activityLoading stopAnimating];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    self.webView.scrollView.delegate = nil;
     [self.activityLoading stopAnimating];
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+    
+    if (velocity.y > 1) {
+        NSLog(@"up");
+        self.topConstraint.constant = -(self.headerView.frame.size.height + 25);
+        [self layoutIfNeeded];
+        return;
+    }
+    
+    if (velocity.y < -1) {
+        NSLog(@"down");
+        self.topConstraint.constant = 0;
+        [self layoutIfNeeded];
+        return;
+    }
+
 }
 
 @end

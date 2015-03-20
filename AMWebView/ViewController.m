@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Double Nose. All rights reserved.
 //
 
+#import "AMWebView.h"
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -17,6 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    AMWebView *webView = [AMWebView amWebView];
+    webView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.view addSubview:webView];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[webView]|" options:0 metrics:nil views:@{@"webView":webView}]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-25-[webView]|" options:0 metrics:nil views:@{@"webView":webView}]];
+    
 }
 
 - (void)didReceiveMemoryWarning {

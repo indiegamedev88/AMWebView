@@ -15,6 +15,8 @@
 		068C7ED31ABB40D5003C308D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068C7ED21ABB40D5003C308D /* Images.xcassets */; };
 		068C7ED61ABB40D5003C308D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068C7ED41ABB40D5003C308D /* LaunchScreen.xib */; };
 		068C7EE21ABB40D5003C308D /* AMWebViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 068C7EE11ABB40D5003C308D /* AMWebViewTests.m */; };
+		068C7EED1ABB41C0003C308D /* AMWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 068C7EEC1ABB41C0003C308D /* AMWebView.m */; };
+		068C7EF11ABB42E7003C308D /* AMWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068C7EF01ABB42E7003C308D /* AMWebView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,9 @@
 		068C7EDB1ABB40D5003C308D /* AMWebViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AMWebViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		068C7EE01ABB40D5003C308D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		068C7EE11ABB40D5003C308D /* AMWebViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMWebViewTests.m; sourceTree = "<group>"; };
+		068C7EEB1ABB41C0003C308D /* AMWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMWebView.h; sourceTree = "<group>"; };
+		068C7EEC1ABB41C0003C308D /* AMWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMWebView.m; sourceTree = "<group>"; };
+		068C7EF01ABB42E7003C308D /* AMWebView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMWebView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +97,9 @@
 				068C7ED41ABB40D5003C308D /* LaunchScreen.xib */,
 				068C7EC91ABB40D5003C308D /* AMWebView.xcdatamodeld */,
 				068C7EC21ABB40D5003C308D /* Supporting Files */,
+				068C7EEB1ABB41C0003C308D /* AMWebView.h */,
+				068C7EEC1ABB41C0003C308D /* AMWebView.m */,
+				068C7EF01ABB42E7003C308D /* AMWebView.xib */,
 			);
 			path = AMWebView;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				068C7ED11ABB40D5003C308D /* Main.storyboard in Resources */,
+				068C7EF11ABB42E7003C308D /* AMWebView.xib in Resources */,
 				068C7ED61ABB40D5003C308D /* LaunchScreen.xib in Resources */,
 				068C7ED31ABB40D5003C308D /* Images.xcassets in Resources */,
 			);
@@ -224,6 +233,7 @@
 			files = (
 				068C7EC81ABB40D5003C308D /* AppDelegate.m in Sources */,
 				068C7ECB1ABB40D5003C308D /* AMWebView.xcdatamodeld in Sources */,
+				068C7EED1ABB41C0003C308D /* AMWebView.m in Sources */,
 				068C7ECE1ABB40D5003C308D /* ViewController.m in Sources */,
 				068C7EC51ABB40D5003C308D /* main.m in Sources */,
 			);
@@ -349,7 +359,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AMWebView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -359,7 +371,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AMWebView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -418,6 +432,7 @@
 				068C7EE71ABB40D5003C308D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		068C7EE81ABB40D5003C308D /* Build configuration list for PBXNativeTarget "AMWebViewTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +441,7 @@
 				068C7EEA1ABB40D5003C308D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

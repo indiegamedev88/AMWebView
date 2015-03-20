@@ -67,7 +67,7 @@
                                 <action selector="tapOnButton:" destination="Dh0-CT-jwc" eventType="touchUpInside" id="smQ-Hr-pkQ"/>
                             </connections>
                         </button>
-                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kr5-ft-QgU">
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="kr5-ft-QgU">
                             <rect key="frame" x="471" y="10" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="kr5-ft-QgU" secondAttribute="height" multiplier="1:1" id="VIg-Ca-vLb"/>
@@ -99,9 +99,13 @@
                         <constraint firstAttribute="bottom" secondItem="Rbt-0X-9zA" secondAttribute="bottom" constant="5" id="vth-vc-2dq"/>
                     </constraints>
                 </view>
-                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YB3-sa-Lqe">
+                <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YB3-sa-Lqe">
                     <rect key="frame" x="0.0" y="40" width="600" height="560"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="Dh0-CT-jwc" id="V9L-7q-bB3"/>
+                    </connections>
                 </webView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

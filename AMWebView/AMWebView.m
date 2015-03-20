@@ -40,7 +40,7 @@
 
 #pragma mark - Setup 
 - (void)prepareLayout{
-
+    self.activityLoading.layer.borderWidth = 1;
 }
 
 #pragma mark - Button Event
@@ -116,6 +116,19 @@
         
         [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:searchText]]];
     }
+}
+
+#pragma mark - UIWebViewDelegate
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    [self.activityLoading startAnimating];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [self.activityLoading stopAnimating];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    [self.activityLoading stopAnimating];
 }
 
 @end
